@@ -42,6 +42,33 @@ export default function Home() {
     ],
   };
 
+  const iPadAir = {
+    type: "white",
+    title: "iPad Air",
+    subtitle: "Now supercharged by the M3 chip.",
+    imageDesktop: "/img/promo/ipad.jpg",
+    imageMobile: "/img/promo/ipad-mobile.jpg",
+    altText: "iPad Air",
+    buttons: [
+      { title: "Learn more", type: "primary", link: "#" },
+      { title: "Buy", type: "outline", link: "#" },
+    ],
+  };
+
+  const TradeIn = {
+    type: "white",
+    title: "Trade In",
+    subtitle:
+      "Get up to $200-$700 in credit when you trade in iPhone 13 or higher.",
+    imageDesktop: "/img/promo/tradein.jpg",
+    imageMobile: "/img/promo/tradein-mobile.jpg",
+    altText: "Trade In",
+    buttons: [
+      { title: "Learn more", type: "primary", link: "#" },
+      { title: "Buy", type: "outline", link: "#" },
+    ],
+  };
+
   return (
     <>
       <Nav />
@@ -54,6 +81,8 @@ export default function Home() {
         <Hero data={watch11} size="small" />
         <Hero data={airPodsPro3} size="small" />
         <Hero data={macBookAir} size="small" />
+        <Hero data={iPadAir} size="small" />
+        <Hero data={TradeIn} size="small" />
       </section>
     </>
   );
