@@ -1,53 +1,41 @@
 import Nav from "@components/Nav/Nav";
 import Hero from "@/components/Hero/Hero";
+import { heroes } from "@/data/heroes";
 
 export default function Home() {
-  const heroIphone17pro = {
-    type: "default",
-    title: "iPhone 17 Pro",
-    subtitle: "All out Pro.",
-    imageDesktop: "/img/hero/iphone-17-pro.jpg",
-    imageMobile: "/img/hero/iphone-17-pro-mobile.jpg",
-    altText: "iPhone 17 Pro in cosmic orange finish, Pro Fusion camera system",
-    buttons: [
-      { title: "Learn more", type: "primary", link: "#" },
-      { title: "Buy", type: "outline", link: "#" },
-    ],
-  };
-
-  const heroIphoneAir = {
-    type: "white",
-    title: "iPhone Air",
-    subtitle: "The thinnest iPhone ever. With the power of pro inside.",
-    imageDesktop: "/img/hero/iphone-air.jpg",
-    imageMobile: "/img/hero/iphone-air-mobile.jpg",
-    altText: "Side view of iPhone Air, showing very thin titanium side",
-    buttons: [
-      { title: "Learn more", type: "primary", link: "#" },
-      { title: "Buy", type: "outline", link: "#" },
-    ],
-  };
-
-  const heroIphone17 = {
-    type: "white",
-    title: "iPhone 17",
-    subtitle: "Magichromatic.",
-    imageDesktop: "/img/hero/iphone-17.jpg",
-    imageMobile: "/img/hero/iphone-17-mobile.jpg",
-    altText: "iPhone 17 in all 5 finishes, fanned out side view",
-    buttons: [
-      { title: "Learn more", type: "primary", link: "#" },
-      { title: "Buy", type: "outline", link: "#" },
-    ],
-  };
-
   const watch11 = {
     type: "white",
     title: "Watch Series 11",
     subtitle: "The ultimate way to watch your health.",
-    imageDesktop: "/img/hero/iphone-17.jpg",
-    imageMobile: "/img/hero/iphone-17-mobile.jpg",
-    altText: "iPhone 17 in all 5 finishes, fanned out side view",
+    imageDesktop: "/img/promo/watch.jpg",
+    imageMobile: "/img/promo/watch-mobile.jpg",
+    altText: "Watch",
+    buttons: [
+      { title: "Learn more", type: "primary", link: "#" },
+      { title: "Buy", type: "outline", link: "#" },
+    ],
+  };
+
+  const airPodsPro3 = {
+    type: "white",
+    title: "AirPods Pro 3",
+    subtitle: "The world's best in-ear Active Noise Cancellation.",
+    imageDesktop: "/img/promo/airpods.jpg",
+    imageMobile: "/img/promo/airpods-mobile.jpg",
+    altText: "AirPods",
+    buttons: [
+      { title: "Learn more", type: "primary", link: "#" },
+      { title: "Buy", type: "outline", link: "#" },
+    ],
+  };
+
+  const macBookAir = {
+    type: "white",
+    title: "MacBook Air",
+    subtitle: "Sky blue color. Sky high perforance with M4.",
+    imageDesktop: "/img/promo/macbook-air.jpg",
+    imageMobile: "/img/promo/macbook-air-mobile.jpg",
+    altText: "MacBook Air",
     buttons: [
       { title: "Learn more", type: "primary", link: "#" },
       { title: "Buy", type: "outline", link: "#" },
@@ -58,12 +46,14 @@ export default function Home() {
     <>
       <Nav />
       <section className="section-heroes">
-        <Hero data={heroIphone17pro} />
-        <Hero data={heroIphoneAir} />
-        <Hero data={heroIphone17} />
+        {heroes.map((hero, index) => (
+          <Hero data={hero} key={index} />
+        ))}
       </section>
       <section className="section-promo-grid">
-        <Hero data={heroIphone17pro} size="small" />
+        <Hero data={watch11} size="small" />
+        <Hero data={airPodsPro3} size="small" />
+        <Hero data={macBookAir} size="small" />
       </section>
     </>
   );
