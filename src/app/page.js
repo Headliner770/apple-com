@@ -11,7 +11,7 @@ export default function Home() {
     altText: "iPhone 17 Pro in cosmic orange finish, Pro Fusion camera system",
     buttons: [
       { title: "Learn more", type: "primary", link: "#" },
-      { title: "Buy", type: "oytline", link: "#" },
+      { title: "Buy", type: "outline", link: "#" },
     ],
   };
 
@@ -24,15 +24,47 @@ export default function Home() {
     altText: "Side view of iPhone Air, showing very thin titanium side",
     buttons: [
       { title: "Learn more", type: "primary", link: "#" },
-      { title: "Buy", type: "oytline", link: "#" },
+      { title: "Buy", type: "outline", link: "#" },
+    ],
+  };
+
+  const heroIphone17 = {
+    type: "white",
+    title: "iPhone 17",
+    subtitle: "Magichromatic.",
+    imageDesktop: "/img/hero/iphone-17.jpg",
+    imageMobile: "/img/hero/iphone-17-mobile.jpg",
+    altText: "iPhone 17 in all 5 finishes, fanned out side view",
+    buttons: [
+      { title: "Learn more", type: "primary", link: "#" },
+      { title: "Buy", type: "outline", link: "#" },
+    ],
+  };
+
+  const watch11 = {
+    type: "white",
+    title: "Watch Series 11",
+    subtitle: "The ultimate way to watch your health.",
+    imageDesktop: "/img/hero/iphone-17.jpg",
+    imageMobile: "/img/hero/iphone-17-mobile.jpg",
+    altText: "iPhone 17 in all 5 finishes, fanned out side view",
+    buttons: [
+      { title: "Learn more", type: "primary", link: "#" },
+      { title: "Buy", type: "outline", link: "#" },
     ],
   };
 
   return (
     <>
       <Nav />
-      <Hero data={heroIphone17pro} />
-      <Hero data={heroIphoneAir} />
+      <section className="section-heroes">
+        <Hero data={heroIphone17pro} />
+        <Hero data={heroIphoneAir} />
+        <Hero data={heroIphone17} />
+      </section>
+      <section className="section-promo-grid">
+        <Hero data={heroIphone17pro} size="small" />
+      </section>
     </>
   );
 }

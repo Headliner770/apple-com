@@ -1,11 +1,18 @@
 "use client";
 import Image from "next/image";
-import styles from "./style.module.css";
 import { useEffect, useState } from "react";
 import Button from "../Button";
+import normalStyles from "./style.module.css";
+import smallStyles from "./small.module.css";
 
-const Hero = ({ data }) => {
+const Hero = ({ data, size }) => {
   const [isMobile, setIsMobile] = useState(false);
+
+  let styles = normalStyles;
+
+  if (size === "small") {
+    styles = smallStyles;
+  }
 
   const { type, title, subtitle, imageDesktop, imageMobile, altText, buttons } =
     data;
